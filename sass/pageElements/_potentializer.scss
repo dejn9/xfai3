@@ -1,0 +1,62 @@
+.potentializer {
+  .bg {
+    background: url('../images/Background/back.png') repeat, url('../images/Background/high.png') no-repeat, black;
+    background-position: 50% -520px;
+    padding-top: 68px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    align-items: flex-start;
+    @media only screen and (max-width:1000px){
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 50px;
+    }
+    @media only screen and (max-width:600px){
+      grid-template-columns: repeat(1,1fr);
+    }
+      .text {
+        max-width: 830px;
+        width:100%;
+        margin-right: 70px;
+        @media only screen and (max-width:1000px){
+          max-width:100%;
+          margin-right: 0;
+        }
+      }
+   
+
+   
+  }
+  &__heading {
+    margin-bottom: 40px;
+    font-size:35px;
+    line-height: 46px;
+  }
+  &__paragraph {
+    color:white;
+    font-size:18px;
+    line-height: 33px;
+    letter-spacing: 0px;
+    @media only screen and (max-width:600px){
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width:360px){
+      font-size:16px;
+      line-height: 29px;
+    }
+  }
+
+  &__img {
+    margin-left: auto;
+    @media only screen and (max-width:1000px){
+      max-width:100%;
+    }
+    @media only screen and (max-width:600px){
+      margin:0 auto;
+    }
+    
+  }
+}

@@ -1,0 +1,122 @@
+.hero {
+    background: url('/images/hero/im2.png');
+    background-repeat: no-repeat;
+    padding-top: 62px;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding-bottom: 70px;
+    height:631px;
+    @media only screen and (max-width:1000px){
+      background-position-x: 25%;
+      position: relative;
+      overflow:hidden;
+      &::after {
+        content:'';
+        position: absolute;
+        background:url('/images/hero/Rectangle\ 476.png');
+        width:100%;
+        top:2px;
+        left:0;
+        background-repeat: no-repeat;
+        height:100%;
+      }
+      
+    }
+    @media only screen and (max-width:768px){
+      background-position-x: 50%;
+    }
+    @media only screen and (max-width:600px){
+      padding-bottom: 209px;
+      padding-top: 30px;
+      background-position-y:300px;
+      background-size: 800px;
+      background-position-x: right;
+      
+      &::after {
+      background:url('/images/hero/Rectangle\ 485.png');
+       width:100%;
+       left:0;
+      top:295px;
+      height:250px !important;
+      background-repeat: repeat-x;
+       
+      
+        
+      }
+    }
+    @media only screen and (max-width:400px){
+      background-position-x: 80%;
+    }
+    
+    .container {
+      @media only screen and (max-width:1000px){
+        position: relative;
+        z-index:3;
+      }
+    }
+  
+    .text  {
+      max-width:485px;
+      min-width:485px;
+      font-family:'Gobold';
+      text-transform: uppercase;
+  
+      @media only screen and (max-width:1000px){
+        max-width:511px;
+        min-width:511px;
+        position: relative;
+        z-index:3;
+      }
+      @media only screen and (max-width:650px){
+        max-width:100%;
+        min-width: 100%;
+      }
+    }
+  
+    &__heading {
+      font-size:80px;
+      line-height: 104px;
+      color:#FC307B;
+      margin-bottom: 60px;
+      @media only screen and (max-width:600px){
+        font-size:50px;
+        line-height: 65px;
+        margin-bottom: 40px;
+      }
+      @media only screen and (max-width:475px){
+        margin-bottom: 30px;
+      }
+    }
+    &__paragraph,&__paragraph-2 {
+      color:white;
+      font-family: 'Gobold';
+      
+      span {
+        color:#FC307B;
+      }
+    }
+    &__paragraph {
+      font-size:28px;
+      line-height: 37px;
+      @media only screen and (max-width:600px){
+        font-size:21px;
+        line-height: 28px;
+      }
+    }
+    &__paragraph-2 {
+      font-size:40px;
+      line-height: 52px;
+      padding:48px 0 50px 0;
+      @media only screen and (max-width:600px){
+       font-size:25px;
+       line-height: 33px;
+       letter-spacing: 0;
+      }
+      @media only screen and (max-width:475px){
+        padding:35px 0 40px 0;
+      }
+      @media only screen and (max-width:375px) {
+        font-size:23px;
+      }
+    }
+}

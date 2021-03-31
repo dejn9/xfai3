@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/faviconit - Mixed/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="images/faviconit - Mixed/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="images/faviconit - Mixed/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="images/faviconit - Mixed/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/faviconit - Mixed/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="images/faviconit - Mixed/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/faviconit - Mixed/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/faviconit - Mixed/favicon-16.png">
+	<link rel="apple-touch-icon" href="images/faviconit - Mixed/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/faviconit - Mixed/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/faviconit - Mixed/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/faviconit - Mixed/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/faviconit - Mixed/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/faviconit - Mixed/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/faviconit - Mixed/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/faviconit - Mixed/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/faviconit - Mixed/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="images/faviconit - Mixed/favicon-144.png">
+	<meta name="msapplication-config" content="images/faviconit - Mixed/browserconfig.xml">
+<link rel="stylesheet" type="text/css" href="css/deckAndBlockpass.css" />
+<script src="https://cdn.blockpass.org/widget/scripts/release/3.0.0/blockpass-kyc-connect.prod.js"></script>
+<!-- Google Analytics START -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GKEM3T3SS3"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GKEM3T3SS3');
+</script>
+<!-- Google Analytics END -->
+<title>XFai</title>
+</head>
+<body class="deckPage">
+<a href="index.html"><div class="whitepaperPageHeader"><img src="images/Nav/WhitePaperHeader.png" width="49" alt=""/></div></a>
+<div class="blockpassCenter">
+	<div class="blockpassButtonContainer">
+	<button class="blockpassButtonStyle" id="blockpass-kyc-connect">Start KYC</button>
+	</div>
+</div>
+	<script>
+        const blockpass = new BlockpassKYCConnect(
+        'xfai_5abe3', 
+        {
+            env: 'prod', 
+            local_user_id: Date.now() 
+        }) 
+    
+        blockpass.startKYCConnect()
+
+        blockpass.on('KYCConnectSuccess', () => {
+            //add code that will trigger when data have been sent. ex:
+            //alert('Success!')
+        })
+
+        blockpass.on('KYCConnectClose', () => {
+            //add code that will trigger when the workflow is finished. ex:
+            //alert('Finished!')
+        })
+
+        blockpass.on('KYCConnectCancel', () => {
+            //add code that will trigger when the workflow is aborted. ex:
+            //alert('Cancelled!')
+        })
+    </script> 
+</body>
+</html>

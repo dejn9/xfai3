@@ -1,0 +1,268 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  width: 100%;
+  background: #000;
+  margin: 0;
+}
+/*/// DECK ///*/
+.deckPage {
+	background-color: #292929;
+	margin: 0;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	color: #fff;
+	line-height: 28px;
+	background-image: url("../images/RepeatingBlackMesh-15.png");
+}
+.deckContent {
+	padding: 100px 50px 50px 50px;
+	max-width: 1000px;
+	padding-left: auto;
+	padding-right: auto;
+}
+a.deck:link {
+	color: #fff;
+}
+a.deck:visited {
+	color: #fff;
+}
+a.deck:hover {
+	color: #FC307B;
+}
+.deckContent {
+	padding: 100px 50px 50px 50px;
+	max-width: 1000px;
+	padding-left: auto;
+	padding-right: auto;
+}
+.deckSlide {
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+/*/// WHITEPAPER ///*/
+.whitepaperPage {
+	background-color: #fff;
+	margin: 0;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	color: #000;
+	line-height: 28px;
+}
+.whitepaperPageHeader{
+	height: 50px;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 200;
+}
+.whitepaperCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.whitepaperContent {
+	padding: 100px 50px 50px 50px;
+	max-width: 1000px;
+	padding-left: auto;
+	padding-right: auto;
+	margin-left: 251px;
+}
+@media (max-width:600px) {
+	.whitepaperContent {
+		padding: 100px 20px 20px 20px;
+	}
+}
+.whitepaperHeader {
+	text-align: center;
+	font-size: 44px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #FC307B;
+	line-height: 50px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.whitepaperSubHeader {
+	font-size: 27px;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+.whitepaperTertiaryHeader {
+	font-size: 22px;
+}
+.whitepaperHorizontalCenter {
+	text-align: center;
+}
+ul {
+  list-style: none;
+}
+ul li::before {
+  content: "\2022";
+  color: #FC307B;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.whitepaperTOCHeader {
+	text-transform: uppercase;
+	color: #000;
+	font-size: 12px;
+    margin-bottom: 10px;
+	font-weight: bold;
+}
+.whitepaperTOC {
+	margin-top: 0px;
+}
+.whitepaperFootnotes {
+	font-size: 12px;
+	margin-top: 70px;
+}
+.whitepaperSup {
+	font-size: 10px;
+	line-height: 14px;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: 250px;
+    visibility: hidden;
+}
+#section1, 
+#section2, 
+#section3, 
+#section4, 
+#section5, 
+#section6,
+#section7, 
+#section8, 
+#section9, 
+#section10,
+#section11, 
+#section12, 
+#section13, 
+#section14,
+#section15, 
+#section16, 
+#section17 {
+    margin-top: -60px;
+    padding-top: 60px;	
+}
+.whitepaperDraft {
+	text-align: center;
+	margin-top: 0px;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+/* LEFT NAV */
+
+.leftNav { 
+	width: 210px;
+	float: left;
+	background-color: #F5F5F5;
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	padding: 60px 20px 20px 20px;
+	font-size: 14px;
+	height: calc(100vh - 80px);
+	overflow-y: scroll;
+	border-right: 1px solid #E6E6E6;
+}
+ul.toc {
+  list-style: none;
+  margin-left: -26px;
+  margin-top: 0px;
+  line-height: 18px;
+}
+ul.toc li::before {
+  content: "\203A";
+  color: #FC307B;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+ul.toc li.active > a {
+	color: #FC307B;
+}
+a.toc:link {
+	color: #000;
+}
+a.toc:visited {
+	color: #000;
+}
+a.toc:hover {
+	color: #FC307B;
+}
+.hamburgerNav {
+	display: none;
+	z-index: 300;
+	float: left;
+	position: fixed;
+	margin: 14px;
+	left: 0;
+	top: 0;
+}
+.hamburgerNavClose {
+	z-index: 400;
+	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #F5F5F5;
+	width: 250px;
+	height: 50px;
+}
+#myDIV {
+	display: none;
+}
+.hamburgerNavCloseSVG {
+	margin: 15px;
+}
+.hamburgerNavClickArea {
+	width: 55px;
+	height: 50px;
+	z-index: 300;
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+.leftNav li.active > a {
+	color: #FC307B;
+}
+
+@media screen and (min-width: 769px) {
+	.leftNavMobile {
+    	display: none !important;
+	}
+}
+@media screen and (max-width:768px) {
+	.leftNavDesktop {
+		display: none;
+	}
+	.hamburgerNav {
+		display: inline;
+	}
+	.leftNavMobile {
+		z-index: 400;
+		position: fixed;
+		float: left;
+	}
+	.whitepaperContent {
+		margin-left: 0px;
+	}
+}

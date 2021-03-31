@@ -1,0 +1,74 @@
+/*//////////////////////////////////////////////// GENERAL SETUP & BODY */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @media only screen and (max-width:500px){
+    overflow-x:unset;
+    overflow-y: hidden;
+  }
+}
+
+h2 {
+  text-shadow: 0 0 50px rgba(255, 255, 255, 0.5) !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  position: relative;
+  background: black;
+  margin: 0 auto;
+  @media only screen and (max-width:500px){
+    overflow-x:unset !important;
+    overflow-y: hidden;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+
+
+  @media only screen and (min-width:1420px) {
+    max-width: 1280px;
+    width: 1280px;
+  }
+
+  @media only screen and (max-width:1420px) {
+    max-width: calc(100% - 140px);
+    width: calc(100% - 140px);
+  }
+
+  @media only screen and (max-width:768px) {
+    max-width: calc(100% - 100px);
+    width: calc(100% - 100px);
+  }
+
+  @media only screen and (max-width:360px) {
+    max-width: calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+}
+
+span {
+  font-size: inherit !important;
+}

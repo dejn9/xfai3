@@ -1,0 +1,65 @@
+.footer {
+    padding-top: 50px;
+    background: url('../images/Background/back.png') repeat, url('../images/Background/high.png') no-repeat, black;
+    background-position: 50% -520px;
+    width:100%;
+    max-width:100%;
+    padding-bottom: 173px;
+  
+  
+    .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 362px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+  
+      @media only screen and (max-width:468px) {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  
+    &__links {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      min-width: 169px;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+  
+    h3 {
+      margin-left: 61.5px;
+      min-width: 140px;
+      padding-left: 37.5px;
+      border-left: 1px solid #333333;
+      font-size: 17px;
+      line-height: 22px;
+      font-family:'EuclidCircular', Arial;
+      color: white;
+      font-weight: 400;
+  
+      @media only screen and (max-width:468px) {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+        min-width: 169px;
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+    }
+  }

@@ -1,0 +1,128 @@
+.slider {
+  background: url('../images/Background/back.png'), url('../images/Background/high.png') no-repeat;
+  background-position: 50% -100px;
+  
+  
+  @media only screen and (max-width:400px){
+    padding-top: 50px;
+    background-position-y: -10px;
+  }
+  @media only screen and (max-width:360px){
+    background-position-y: top;
+  }
+  &__heading {
+    font-size: 40px;
+    color: white;
+    max-width: 862px;
+    text-shadow: 0 0 50px rgba(255,255,255,.3) !important;
+    margin: 0 auto;
+    line-height: 53px;
+    background: transparent;
+    font-family: Gobold;
+    font-weight: bold;
+    text-align: center;
+
+    @media only screen and (max-width:920px) {
+      max-width: 100%;
+
+    }
+
+
+    @media only screen and (max-width:400px) {
+      font-size: 28px;
+      line-height: 37px;
+      padding-top: 100px;
+    }
+
+    @media only screen and (max-width:305px) {
+      top: -100px;
+    }
+
+    span {
+      color: #FC307B;
+    }
+  }
+
+
+.blackbox {
+  background:black;
+}
+
+  .slide {
+    border: 1px solid black;
+    margin-top: 30px;
+    width: 100vw;
+
+  }
+
+  .box {
+    text-align: center;
+    height: 500px;
+    position: relative;
+    color: white;
+
+    @media only screen and (max-width:360px) {
+      height: auto;
+      padding-bottom: 30px;
+    }
+
+    p {
+      margin: 0 auto;
+      text-align: left;
+      margin-bottom: 95px;
+      margin-top: 33px;
+      font-size: 23px;
+      font-family:'EuclidCircular', Arial;
+      max-width: 958px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: 0;
+
+      @media only screen and (max-width:768px) {
+        font-size: 21px;
+        line-height: 30px;
+      }
+
+      @media only screen and (max-width:360px) {
+        font-size: 15px;
+        line-height: 19px;
+        margin-bottom: 50px;
+      }
+
+      span {
+        color: #5FD9DD;
+        font-weight: bold;
+      }
+    }
+
+    img {
+      max-height: 220px;
+      margin: 0 auto;
+
+      @media only screen and (max-width:1320px) {
+        max-width: 100%;
+        max-height: auto;
+      }
+    }
+  }
+}
+
+.slick-dots {
+  position: relative;
+  bottom: -50px;
+  width: 150px;
+  height: 50px;
+
+  button {
+    height: 10px !important;
+    width: 10px !important;
+    text-indent: -999999px;
+    background-color: #707070 !important;
+    border-radius: 50%;
+  }
+}
+
+
+.slick-dots li.slick-active button {
+  background-color: #5fd9dd !important;
+}
