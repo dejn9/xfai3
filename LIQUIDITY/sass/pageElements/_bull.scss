@@ -28,14 +28,26 @@ background-position: 50% 50%;
     background-position-x: -200px;
   &::after {
     background:url('/images/bull/Rectangle\ 486.png');
+    // background:Red;
+    width:100%;
+    height:450px;
+    top:45%;
+    left:0;
     background-repeat: repeat;
-    height:auto;
-    top:55%;
+    
     
   }
   
   }
  
+  @media only screen and (max-width:410px){
+    &::after {
+      
+      top:55%;
+      
+      
+    }
+  }
  
 
   .container {
