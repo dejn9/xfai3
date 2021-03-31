@@ -180,28 +180,6 @@ a {
 .header .container a {
   position: relative;
 }
-.header .container a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #fff;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-.header .container a:hover::before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  transform: scaleX(1);
-}
 .header .container .line {
   height: 43px;
   width: 1px;
@@ -225,6 +203,28 @@ a {
   line-height: 21px;
   font-family: "EuclidCircular", Arial;
   font-weight: 600;
+}
+.header .container .whitePaper::before, .header .container .lqd::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.header .container .whitePaper:hover::before, .header .container .lqd:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
 }
 @media only screen and (max-width: 600px) {
   .header .container .whitePaper, .header .container .lqd {

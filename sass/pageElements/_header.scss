@@ -26,6 +26,27 @@
     a {
       position: relative;
 
+     
+    }
+
+    .line {
+      height: 43px;
+      width: 1px;
+      background: #333333;
+      margin: 0 45px;
+      transition: all .3s ease-in-out;
+
+      @media only screen and (max-width:668px) {
+        height: 28px;
+        margin: 0 20px;
+      }
+    }
+
+    .whitePaper,.lqd {
+      color: white;
+      line-height: 21px;
+      font-family:'EuclidCircular', Arial;
+      font-weight: 600;
       &::before {
         content: "";
         position: absolute;
@@ -49,27 +70,6 @@
         -ms-transform: scaleX(1);
         transform: scaleX(1);
       }
-    }
-
-    .line {
-      height: 43px;
-      width: 1px;
-      background: #333333;
-      margin: 0 45px;
-      transition: all .3s ease-in-out;
-
-      @media only screen and (max-width:668px) {
-        height: 28px;
-        margin: 0 20px;
-      }
-    }
-
-    .whitePaper,.lqd {
-      color: white;
-      line-height: 21px;
-      font-family:'EuclidCircular', Arial;
-      font-weight: 600;
-
       @media only screen and (max-width:668px) {
         font-size: 14px;
         line-height: 19px;
