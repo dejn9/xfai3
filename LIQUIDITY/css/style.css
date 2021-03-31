@@ -68,7 +68,7 @@ ul {
 }
 
 p {
-  font-family: "Euclid Circular A";
+  font-family: "EuclidCircular", Arial;
 }
 p span {
   font-weight: 700;
@@ -78,7 +78,7 @@ a {
   text-decoration: none;
   color: white;
   display: inline-block;
-  font-family: "Euclid Circular A";
+  font-family: "EuclidCircular", Arial;
   font-weight: 600;
   font-style: normal;
 }
