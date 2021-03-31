@@ -774,6 +774,9 @@ a {
   }
   .bull::after {
     background: url("/images/bull/Rectangle 486.png");
+    background-repeat: repeat;
+    height: auto;
+    top: 55%;
   }
 }
 .bull .container {

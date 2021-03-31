@@ -28,6 +28,9 @@ background-position: 50% 50%;
     background-position-x: -200px;
   &::after {
     background:url('/images/bull/Rectangle\ 486.png');
+    background-repeat: repeat;
+    height:auto;
+    top:55%;
     
   }
   
