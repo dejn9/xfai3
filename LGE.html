@@ -26,22 +26,23 @@
 	<meta name="msapplication-TileImage" content="images/faviconit - Mixed/favicon-144.png">
 	<meta name="msapplication-config" content="images/faviconit - Mixed/browserconfig.xml">
     <link rel="stylesheet" href="css/lity.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="hamburgers-master/dist/hamburgers.css">
     <link rel="stylesheet" href="LIQUIDITY/css/style.css">
-    <title>XFAI</title>
+    <title>Xfai</title>
 </head>
 <body>
 
    
   <div class="topBorder"></div>
 
-  <header class='header'>
+  <header  data-aos="fade-in" class='header'>
 
     <div class='container'>
      <a href="index.html"><img src="images/Nav/XFAI-Logo.svg" alt="XFai Logo" class="imgLogo" /></a> 
       <div class="line"></div>
       <a href="whitepaper.html" class='whitePaper'>Whitepaper</a>
-      <a href="liquidity.html" class='lqd'>Liquidity Generation Event</a>
+      <a href="LGE.html" class='lqd'>Liquidity Generation Event</a>
       <div class="icons">
         <a href="https://t.me/xfaiofficial" target="_blank" class='telegramHeaderIcon'>
           <img src="images/Icons/FooterIcon-Telegram.svg" alt="" height="20px">
@@ -63,7 +64,7 @@
     <div class="sidePanel">
       <div class="container">
         <a href="whitepaper.html">Whitepaper</a>
-        <a href="#">Liquidity Generation Event</a>
+        <a href="LGE.html">Liquidity Generation Event</a>
         <a  href="https://t.me/xfaiofficial" target="_blank">Telegram</a>
         <a href="https://twitter.com/xfai_official" target="_blank">Twitter</a>
       </div>
@@ -176,13 +177,16 @@
   <script type="text/javascript" src="js/slick/slick.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
+    AOS.init();
+  </script>
+  <script>
     $(window).scroll(function () {
       if ($(document).scrollTop() > 0) {
         $('.header').addClass('small');
-        $('body').addClass('bodyPTop');
+        $('.hero').addClass('heroMT');
       } else {
         $('.header').removeClass('small');
-        $('body').removeClass('bodyPTop');
+        $('.hero').removeClass('heroMT');
       }
     });
   </script>

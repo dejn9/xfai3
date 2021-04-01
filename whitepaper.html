@@ -98,9 +98,9 @@
 <p>Uniswap is currently the largest single exchange, bigger than Coinbase, Binance, and any other exchange in terms of its number of token pairs and known liquidity in its overall pools.<sup class="whitepaperSup">2, 3</sup></p>
 
 <p class="whitepaperSubHeader" id="section2">Why Variance Won't End in the Crypto Space <sup class="whitepaperSup">4</sup></p>
-<p><img src="images/graphs/1.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/1.png" width="100%" alt=""/></p>
 <p>The above is a variance index of BTC to USD in terms of 30-day average USD returns. Average variance has decreased considerably over the years, as more USD liquidity has been onboarded. Ethereum and other large coins have a similar decreasing variance.</p>
-<p><img src="images/graphs/2.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/2.png" width="100%" alt=""/></p>
 <p>This chart shows the 30-day average USD returns of BTC, ETH, and LTC compared over certain time periods. The important takeaway is that coins/tokens with less aggregate USD liquidity standing by (e.g., Exchange order books, brokers, traditional market makers, Autonomous Market makers, etc.) <strong>experience relatively higher average variance.</strong></p>
 <p>This is why our current and future toolset is focused on the high variance tokens, i.e., the small cap/small liquidity tokens, all without exposing ourselves to the actual underlying tokens themselves.</p>
 <p class="whitepaperSubHeader" id="section3">Problem</p>
@@ -116,17 +116,17 @@
 <p>Our DLO deploys 'small cap' tokens loaned by their holders via our strategy contract to Uniswap and similar pools for shaping the Uniswap curves in such a way as to match and exceed the prices to volume ratio of CEXs. This will organically pull first large traders and investors, and later smaller ones as well, from the CEXs. Liquidity, price discovery, and therefore fees will migrate organically from CEXs to DEXs. Fees accumulated are given to the 'small cap' token lenders, which increases their financial position in those tokens. From a financial perspective our DLO performs for 'small cap' tokens the same as Bitcoin Bonds and Ethereum staking allows for BTC and ETH.</p>
 <p class="whitepaperTertiaryHeader" id="section6">High Level Steps Taken by the DLO</p>
 <p>1. Users add their tokens ('small cap' tokens, USDT, ETH, etc.) to our liquidity pools. Our contract takes tokens out of these pools continuously and deploys them for syncing the curves. The user only need provide one token at a time and is never exposed to more than one token at a time. </p>
-<p><img src="images/graphs/3.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/3.png" width="100%" alt=""/></p>
 <p>2. Our DLO reads exchange APIs on multiple large orderbooks for those token pairs.</p>
-<p><img src="images/graphs/4.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/4.png" width="100%" alt=""/></p>
 <p>3. It constructs synthetic curves by averaging the orderbook volume out. One synthetic curve per pair per exchange is created. </p>
-<p><img src="images/graphs/5.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/5.png" width="100%" alt=""/></p>
 <p>4. The same synthetic pair curves across multiple exchanges is combined to create a single synthetic  curve per pair. This synthetic curve is then used as the reference curve against Uniswap, until the Uniswap liquidity matches or exceeds the combined liquidity of all exchanges.</p>
-<p><img src="images/graphs/6.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/6.png" width="100%" alt=""/></p>
 <p>5. The strategy contract then adds or removes liquidity of tokens to the actual Uniswap curves until it matches the synthetic curve.</p>
-<p><img src="images/graphs/7.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/7.png" width="100%" alt=""/></p>
 <p>6. This process continuously repeats to keep both curves in sync.</p>
-<p><img src="images/graphs/8.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/8.png" width="100%" alt=""/></p>
 <p class="whitepaperSubHeader" id="section7">Synthetic Curve</p>
 <p>Our synthetic curve approach is pioneering and unique. It is really only possible because of our CEX-to-DEX target, whereby the DLO utilises the synthetic curve as the liquidity target for the real Uniswap curve as long as the CEX is the dominant liquidity. We are effectively translating all possible prices of an order book from a traditional CEX into a continuous Automated Market Maker (AMM) curve. Therefore, the DLO can be viewed as a translator between legacy CeFi and DeFi.</p>
 <p>By getting live orderbook data from an exchange and analyzing the overall shape and depth of the orderbook at each price point, we know how much liquidity an equivalent AMM would require to have the same or less price slippage as compared to the orderbook. The actual slippage will depend on the average size of the trades performed on the CEX vs DEX, but nonetheless we are able to construct such a synthetic curve for each token pair.</p>
@@ -146,26 +146,26 @@
 <p>The definition of Impermanent Loss on the other hand becomes: </p>
 <p class="whitepaperHorizontalCenter">Impermanent_loss = 2 * sqrt(price_ratio) / (1+price_ratio) - 1 </p>
 <p>Which is visualized as: </p>
-<p><img src="images/graphs/9.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/9.png" width="100%" alt=""/></p>
 <p>What most Uniswap liquidity providers are not aware of is that the impermanent loss (as compared to just holding both tokens) will happen <em>regardless</em> of whether the token price increases or decreases. In fact, even if the price of one of the tokens greatly increase, the more the increase from the time at which the original liquidity was deposited, the <em>greater the loss</em>.  Uniswaps value proposition is therefore actually extremely flawed.</p>
 <p>There is only one way to resolve this problem, as we can identify via the original Liquidity Pool Value and Impermanent Loss equations. The liquidity provider has to manage his liquidity <em>in real time</em> on Uniswap by increasing or decreasing liquidity actively to match the price movement of the target token.</p>
 <p class="whitepaperHorizontalCenter">impermanent_loss = 2 * sqrt(price_ratio) / (Delta 1 +price_ratio) - Delta 1 </p>
 <p>Where Delta 1 is the delta (difference) between the current net number of tokens and new number of tokens in the liquidity pool of Uniswap. This delta can be both positive (adding tokens to the liquidity pool) as well as negative (removing tokens from the liquidity pool).</p>
-<p><img src="images/graphs/10.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/10.png" width="100%" alt=""/></p>
 <p>By actively adding and removing liquidity from the token pool we can keep the change in total
 liquidity value constant and therefore get rid of impermanent loss. This explains why the DLO liquidity pools are needed as "standby" liquidity outside the pool in order to maximize the returns
 of the pool in USDC terms.</p>
-<p><img src="images/graphs/11.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/11.png" width="100%" alt=""/></p>
 <p>It also explains why our core hypothesis is one of variance: The X axis is effectively variance. By actively managing the liquidity in the pools we can keep the change in total liquidity value to 0 or slightly fluctuating around 0. </p>
-<p><img src="images/graphs/12.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/12.png" width="100%" alt=""/></p>
 <p>By knowing the current price of the token on the CEXs as well as on the DEX, our DLO knows what the current liquidity level in Uniswap for the token should be for a trade of the size which will move the DEX price of the token to correlate with the CEX price, without triggering impermanent loss, meaning while keeping the proportional liquidity value constant. </p>
 <p>Therefore, the stacked transaction always starts with first increasing/decreasing the liquidity up to the point where it will be needed and then swap the tokens on Uniswap to match the price with the Exchange price. This shift of both the liquidity and price therefore leads to the effective shift of the impermanent loss curve. </p>
 <p class="whitepaperSubHeader" id="section9">Force Multiplier</p>
 <p>The bigger the difference between the synthetic curves and Uniswap curves is, the more we can reduce relative slippage, by doing so we are also increasing potential fees for liquidity providers as we are using a larger percentage of the token liquidity pool for revenue generation (i.e. larger deployment of capital). </p>
 <p>Price slippage between the synthetic curve and the real curve is the result of relative liquidity differences between the two (as shown below) due to, in this case, injecting liquidity into Uniswap we match the synthetic and real curve, removing all slippage and incentivizing traders to trade on-chain.</p>
-<p><img src="images/graphs/13.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/13.png" width="100%" alt=""/></p>
 <p>The side-effect of a very big relative difference between the synthetic and the real curve is that our strategy now owns a larger percentage of the overall token liquidity in the Uniswap pools, and therefore earns disproportional fees compared to a small synthetic-to-real curve difference.</p>
-<p><img src="images/graphs/14.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/14.png" width="100%" alt=""/></p>
 <p>The larger the percentage of the overall pool that we own due to the larger difference, the larger the percentage of the fees which we get from Uniswap on the deployed token capital. As long as end-users maintain their liquidity in our DLO pools, it means that the relative share of the overall pool in fact continues to increase faster than that of the smaller liquidity providers within the Uniswap pool due to the overall compounding effects.</p>
 <p class="whitepaperSubHeader" id="section10">No Need for Trusted 3rd Parties</p>
 <p>Traditional on-chain settlement or liquidation mechanisms such as MakerDAO liquidity providers (called "Keepers" <sup class="whitepaperSup">5</sup>) execute trades off-chain and provide their capital at risk to Maker. We never perform any trade on CEXs and are therefore never exposed to their counterparty risk.</p>
@@ -186,10 +186,10 @@ of the pool in USDC terms.</p>
 <p>Beyond simply deploying all tokens in our liquidity pools, we plan on integrating 3rd party liquidity pools such as Compound, Aave, etc. for large liquidity tokens such as ETH, USDT, USDC, WBTC, etc. This is only possible because of the way our liquidity oracle works and because it is indifferent towards the source of the funds. The only constraining factors in using such 3rd party liquidity pools will be their overall liquidity available, prevailing interest rates, and collateral requirements.</p>
 <p>Furthermore, we deploy specific strategies which optimize for both overall (global) fee returns as well as overall (global) synchronization across all Uniswap pairs under our DLO management.  Our proprietary combinatorial and multi-dimensional approach will be key to maximizing returns globally.</p>
 <p>Token holder never leave their crypto wallet such as Metamask. All tokens stay in their control with their keys without ever being exposed to central counterparty risks such as CEXs. Users can take out their funds at any point in time and are therefore 100% liquid even though their funds might have been already deployed for synchronization purposes.</p>
-<p><img src="images/graphs/15.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/15.png" width="100%" alt=""/></p>
 <p>CEXs by holding your funds with their keys have become enormous counterparty and systemic risk factors in the whole crypto industry. They had their place when the industry started but now, they are a net negative and a drag on the development of the industry. Their incentive is to keep the tokens off the broader DeFi ecosystem so that they continue to benefit from user fees. They therefore create what we call a "firewall" between 'small cap' tokens and the broader DeFi ecosystem. This kills the possibilities of composability and options.  </p>
 <p>The primary way they achieve this is by holding users' tokens with exchange keys rather than user keys.</p>
-<p><img src="images/graphs/16.png" width="100%" alt=""/></p>
+<p><img src="images/WhitepaperGraphs/16.png" width="100%" alt=""/></p>
 <p>Once users hold tokens with their own keys on-chain, the CEX firewall breaks down and the tokens can start to flourish. Due to XFai's DLO-Brick feature providing liquidity on-chain it becomes accessible for other DeFi projects to get information and price feeds on these smaller tokens from DEX's. This allows other projects such as Aave, Maker or Uniswap to engage these smaller tokens and results in network effects. Giving them composability while also allowing the possibility of many additional layers and derivatives. Creating a building block effect.</p>
 <p>This is the dream of all mid-size and smaller tokens and projects: to play in the same league as the bigger ones, create a fairer playing field, have a chance to perform, and make smaller cap tokens more attractive.</p>
 <p class="whitepaperSubHeader" id="section13">Network Effects</p>

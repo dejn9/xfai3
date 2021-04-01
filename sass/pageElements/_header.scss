@@ -6,7 +6,7 @@
   z-index: 15;
   top: 9px;
   left: 0;
-  transition: all .3s ease-in-out;
+  border-bottom:1px solid #FC307B;
 
   .container {
     display: -webkit-box;
@@ -16,11 +16,13 @@
     -ms-flex-align: center;
     align-items: center;
     padding: 12px 0;
-    transition: all .3s ease-in-out;
 
-    @media only screen and (max-width:668px) {
+    @media only screen and (max-width:768px) {
       padding: 4.25px 0;
 
+    }
+    @media only screen and (max-width:600px) {
+     justify-content: space-between;
     }
 
     a {
@@ -35,11 +37,16 @@
       background: #333333;
       margin: 0 45px;
       transition: all .3s ease-in-out;
+     
 
-      @media only screen and (max-width:668px) {
-        height: 28px;
-        margin: 0 20px;
+      @media only screen and (max-width:768px) {
+        
+        display: none;
       }
+      @media only screen and (max-width:600px) {
+        display: none;
+      }
+      
     }
 
     .whitePaper,.lqd {
@@ -47,6 +54,7 @@
       line-height: 21px;
       font-family:'EuclidCircular', Arial;
       font-weight: 600;
+
       &::before {
         content: "";
         position: absolute;
@@ -70,13 +78,17 @@
         -ms-transform: scaleX(1);
         transform: scaleX(1);
       }
-      @media only screen and (max-width:668px) {
-        font-size: 14px;
-        line-height: 19px;
+      @media only screen and (max-width:768px) {
+        display: none;
       }
     }
     .lqd {
-      margin-left: 23px;
+      margin-left: 43px;
+      animation-name: color_change;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
     }
 
     .telegramHeaderIcon {
@@ -87,12 +99,16 @@
     }
     .icons {
       margin-left: auto;
+      @media only screen and (max-width:768px) {
+        display: none;
+      }
     }
     
 
     .imgLogo {
       transition: all .3s ease-in-out;
-      @media only screen and (max-width:668px) {
+      
+      @media only screen and (max-width:768px) {
         max-width: 48px;
       }
     }
@@ -110,7 +126,6 @@
 }
 
 .small {
-
   @media only screen and (min-width:667px) {
     height: 50px !important;
 
@@ -123,7 +138,7 @@
       max-width: 48px;
     }
 
-    .whitePaper {
+    .whitePaper,.lqd {
       font-size: 14px;
       line-height: 19px;
     }
@@ -139,25 +154,32 @@
 .mobileMenu {
   display: none;
 
-  @media only screen and (max-width:360px) {
+  @media only screen and (max-width:768px) {
     display: -webkit-box;
     display: -ms-flexbox;
+    margin-left: auto;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    
   }
 
   .line {
     margin: 0 20px !important;
+    @media only screen and (max-width:768px) {
+      display: none;
+    }
   }
+
+
 }
 
 .sidePanel {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   width: 100vw;
-  top: 59px;
+  top: 50px;
   opacity: 0;
   left: -100vw;
   -webkit-transition: all 0.5s ease-in-out;
@@ -165,9 +187,15 @@
   transition: all 0.5s ease-in-out;
   height: 100vh;
   background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (min-width:769px){
+    display: none;
+  }
 
   .container {
-    padding-top: 85px;
+    padding-top: 9px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -178,7 +206,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 360px;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -189,10 +216,51 @@
     font-size: 34px;
     line-height: 40px;
     font-family:'EuclidCircular', Arial;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 400;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &-active {
     left: 0;
     opacity: 1;
   }
+}
+
+.bg-black {
+  background-image: unset !important;
+  background: black !important;
+}
+
+.headerB0 {
+  border:none;
+}
+
+
+.invisible {
+  opacity:0;
+}
+
+@-webkit-keyframes color_change {
+  from { color: white; }
+  to { color: #FC307B; }
+}
+@-moz-keyframes color_change {
+  from { color: white; }
+  to { color: #FC307B; }
+}
+@-ms-keyframes color_change {
+  from { color: white; }
+  to { color: #FC307B; }
+}
+@-o-keyframes color_change {
+  from { color: white; }
+  to { color: #FC307B; }
+}
+@keyframes color_change {
+  from { color: white; }
+  to { color: #FC307B; }
 }

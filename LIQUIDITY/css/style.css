@@ -13,11 +13,6 @@ body {
   width: 100%;
   background: black;
   overflow-x: hidden;
-  padding-top: 107px;
-}
-
-.bodyPTop {
-  padding-top: 50px;
 }
 
 .container {
@@ -154,7 +149,6 @@ a {
   z-index: 15;
   top: 9px;
   left: 0;
-  transition: all 0.3s ease-in-out;
   border-bottom: 1px solid #FC307B;
 }
 .header .container {
@@ -165,9 +159,8 @@ a {
   -ms-flex-align: center;
   align-items: center;
   padding: 12px 0;
-  transition: all 0.3s ease-in-out;
 }
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 768px) {
   .header .container {
     padding: 4.25px 0;
   }
@@ -189,8 +182,7 @@ a {
 }
 @media only screen and (max-width: 768px) {
   .header .container .line {
-    height: 28px;
-    margin: 0 20px;
+    display: none;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -226,13 +218,17 @@ a {
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .header .container .whitePaper, .header .container .lqd {
     display: none;
   }
 }
 .header .container .lqd {
   margin-left: 43px;
+  animation-name: color_change;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 .header .container .telegramHeaderIcon {
   margin-right: 20px;
@@ -245,7 +241,7 @@ a {
 .header .container .icons {
   margin-left: auto;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .header .container .icons {
     display: none;
   }
@@ -262,7 +258,6 @@ a {
 .topBorder {
   height: 9px;
   background-image: url("../images/Nav/topborder.png");
-  transition: all 0.3s ease-in-out;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -293,10 +288,11 @@ a {
 .mobileMenu {
   display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .mobileMenu {
     display: -webkit-box;
     display: -ms-flexbox;
+    margin-left: auto;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -306,7 +302,7 @@ a {
 .mobileMenu .line {
   margin: 0 20px !important;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .mobileMenu .line {
     display: none;
   }
@@ -328,7 +324,7 @@ a {
   align-items: center;
   justify-content: center;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 769px) {
   .sidePanel {
     display: none;
   }
@@ -345,11 +341,8 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 40%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  margin-top: 60%;
-  transform: translateY(-50%);
   justify-content: space-between;
 }
 .sidePanel a {
@@ -358,6 +351,7 @@ a {
   line-height: 40px;
   font-family: "EuclidCircular", Arial;
   text-align: center;
+  margin-bottom: 50px;
   font-weight: 400;
 }
 .sidePanel a:hover {
@@ -381,14 +375,61 @@ a {
   opacity: 0;
 }
 
+@-webkit-keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: #FC307B;
+  }
+}
+@-moz-keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: #FC307B;
+  }
+}
+@-ms-keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: #FC307B;
+  }
+}
+@-o-keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: #FC307B;
+  }
+}
+@keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: #FC307B;
+  }
+}
 .hero {
-  background: url("/images/hero/im2.png");
+  background: url("../images/hero/im2.png");
   background-repeat: no-repeat;
   padding-top: 62px;
   background-size: cover;
   background-position: 50% 50%;
   padding-bottom: 70px;
   height: 631px;
+  margin-top: 115px;
+  border-bottom: 1px solid #FC307B;
+}
+@media only screen and (max-width: 768px) {
+  .hero {
+    margin-top: 64px;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .hero {
@@ -399,7 +440,7 @@ a {
   .hero::after {
     content: "";
     position: absolute;
-    background: url("/images/hero/Rectangle 476.png");
+    background: url("../images/hero/Rectangle 476.png");
     width: 100%;
     top: 2px;
     left: 0;
@@ -421,7 +462,7 @@ a {
     background-position-x: right;
   }
   .hero::after {
-    background: url("/images/hero/Rectangle 485.png");
+    background: url("../images/hero/Rectangle 485.png");
     width: 100%;
     left: 0;
     top: 295px;
@@ -516,6 +557,10 @@ a {
   .hero__paragraph-2 {
     font-size: 23px;
   }
+}
+
+.heroMT {
+  margin-top: 64px;
 }
 
 .joinTheRevolution .bg {
@@ -743,7 +788,7 @@ a {
   position: relative;
   height: 785px;
   width: 100%;
-  background: url("/images/bull/bull.png");
+  background: url("../images/bull/bull.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -760,7 +805,7 @@ a {
     top: 0;
     height: 100%;
     width: 100%;
-    background: url("/images/bull/Path 5883.png");
+    background: url("../images/bull/Path 5883.png");
   }
 }
 @media only screen and (max-width: 600px) {
@@ -773,7 +818,7 @@ a {
     background-position-x: -200px;
   }
   .bull::after {
-    background: url("/images/bull/Rectangle 486.png");
+    background: url("../images/bull/Rectangle 486.png");
     width: 100%;
     height: 540px;
     top: 45%;

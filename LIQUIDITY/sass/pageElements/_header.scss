@@ -6,7 +6,6 @@
     z-index: 15;
     top: 9px;
     left: 0;
-    transition: all .3s ease-in-out;
     border-bottom:1px solid #FC307B;
  
     .container {
@@ -17,9 +16,8 @@
       -ms-flex-align: center;
       align-items: center;
       padding: 12px 0;
-      transition: all .3s ease-in-out;
   
-      @media only screen and (max-width:668px) {
+      @media only screen and (max-width:768px) {
         padding: 4.25px 0;
   
       }
@@ -42,8 +40,8 @@
        
   
         @media only screen and (max-width:768px) {
-          height: 28px;
-          margin: 0 20px;
+          
+          display: none;
         }
         @media only screen and (max-width:600px) {
           display: none;
@@ -80,12 +78,17 @@
           -ms-transform: scaleX(1);
           transform: scaleX(1);
         }
-        @media only screen and (max-width:600px) {
+        @media only screen and (max-width:768px) {
           display: none;
         }
       }
       .lqd {
         margin-left: 43px;
+        animation-name: color_change;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
       }
   
       .telegramHeaderIcon {
@@ -96,7 +99,7 @@
       }
       .icons {
         margin-left: auto;
-        @media only screen and (max-width:600px) {
+        @media only screen and (max-width:768px) {
           display: none;
         }
       }
@@ -104,9 +107,7 @@
   
       .imgLogo {
         transition: all .3s ease-in-out;
-        &:hover {
-
-        }
+        
         @media only screen and (max-width:768px) {
           max-width: 48px;
         }
@@ -117,7 +118,6 @@
   .topBorder {
     height: 9px;
     background-image: url('../images/Nav/topborder.png');
-    transition: all .3s ease-in-out;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -156,9 +156,10 @@
   
     
   
-    @media only screen and (max-width:600px) {
+    @media only screen and (max-width:768px) {
       display: -webkit-box;
       display: -ms-flexbox;
+      margin-left: auto;
       display: flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -168,7 +169,7 @@
   
     .line {
       margin: 0 20px !important;
-      @media only screen and (max-width:600px) {
+      @media only screen and (max-width:768px) {
         display: none;
       }
     }
@@ -191,7 +192,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @media only screen and (min-width:600px){
+    @media only screen and (min-width:769px){
       display: none;
     }
   
@@ -207,11 +208,8 @@
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      height: 40%;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-      margin-top: 60%;
-      transform: translateY(-50%);
       justify-content: space-between;
     }
   
@@ -221,6 +219,7 @@
       line-height: 40px;
       font-family:'EuclidCircular', Arial;
       text-align: center;
+      margin-bottom: 50px;
       font-weight: 400;
       &:hover {
         text-decoration: none;
@@ -242,6 +241,28 @@
     border:none;
   }
 
+ 
   .invisible {
-    opacity: 0;
+    opacity:0;
+  }
+
+  @-webkit-keyframes color_change {
+    from { color: white; }
+    to { color: #FC307B; }
+  }
+  @-moz-keyframes color_change {
+    from { color: white; }
+    to { color: #FC307B; }
+  }
+  @-ms-keyframes color_change {
+    from { color: white; }
+    to { color: #FC307B; }
+  }
+  @-o-keyframes color_change {
+    from { color: white; }
+    to { color: #FC307B; }
+  }
+  @keyframes color_change {
+    from { color: white; }
+    to { color: #FC307B; }
   }

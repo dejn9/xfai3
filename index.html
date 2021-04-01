@@ -66,7 +66,7 @@
     <a href="index.html"><img src="images/Nav/XFAI-Logo.svg" alt="XFai Logo" class="imgLogo" /></a>  
       <div class="line"></div>
       <a href="whitepaper.html" class='whitePaper'>Whitepaper</a>
-      <a href="liquidity.html" class='lqd'>Liquidity Generation Event
+      <a href="LGE.html" class='lqd'>Liquidity Generation Event
       </a>
       <div class="icons">
         <a href="https://t.me/xfaiofficial" target="_blank" class='telegramHeaderIcon'>
@@ -77,14 +77,14 @@
       </div>
 
 
-      <!-- <div class="mobileMenu">
+      <div class="mobileMenu">
         <div class="line"></div>
         <button class="hamburger hamburger--squeeze" type="button">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
         </button>
-      </div> -->
+      </div>
     </div>
   </header>
 
@@ -420,14 +420,20 @@
     });
   </script>
 
-  <script>
-    let hamburger = document.querySelector('.hamburger');
-    let sidePanel = document.querySelector('.sidePanel');
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('is-active');
-      sidePanel.classList.toggle('sidePanel-active');
-    })
-  </script>
+<script>
+  let hamburger = document.querySelector('.hamburger');
+  let sidePanel = document.querySelector('.sidePanel');
+  let topBorder = document.querySelector('.topBorder');
+  let imgLogo = document.querySelector('.imgLogo');
+  let header = document.querySelector('.header');
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('is-active');
+    sidePanel.classList.toggle('sidePanel-active');
+    topBorder.classList.toggle('bg-black');
+    imgLogo.classList.toggle('invisible');
+    header.classList.toggle('headerB0');
+  })
+</script>
 
 
 </body>

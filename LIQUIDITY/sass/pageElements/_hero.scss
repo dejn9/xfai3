@@ -1,11 +1,17 @@
 .hero {
-    background: url('/images/hero/im2.png');
+    background: url('../images/hero/im2.png');
     background-repeat: no-repeat;
     padding-top: 62px;
     background-size: cover;
     background-position: 50% 50%;
     padding-bottom: 70px;
     height:631px;
+    margin-top: 115px;
+    border-bottom:1px solid #FC307B;
+    @media only screen and (max-width:768px){
+      margin-top: 64px;
+    }
+   
     @media only screen and (max-width:1000px){
       background-position-x: 25%;
       position: relative;
@@ -13,7 +19,7 @@
       &::after {
         content:'';
         position: absolute;
-        background:url('/images/hero/Rectangle\ 476.png');
+        background:url('../images/hero/Rectangle\ 476.png');
         width:100%;
         top:2px;
         left:0;
@@ -33,7 +39,7 @@
       background-position-x: right;
       
       &::after {
-      background:url('/images/hero/Rectangle\ 485.png');
+      background:url('../images/hero/Rectangle\ 485.png');
        width:100%;
        left:0;
       top:295px;
@@ -119,4 +125,9 @@
         font-size:23px;
       }
     }
+}
+
+.heroMT {
+  margin-top:64px;
+ 
 }
